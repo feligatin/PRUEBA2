@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="0">
+		<form method="post" action="">
+			<tr>
+				<td>Usuario :</td>
+				<td >
+					<input type="text" value="" name="usuario">
+				</td>
+			</tr>
+			<tr>
+				<td align="middle">Contraseña :</td>
+				<td>
+					<input type="password" value="" name="contraseña">
+				</td>			
+			</tr>
+			<tr>
+				<td colspan="2" align="middle"><input type="submit" value="Calcular" name="boton""></td>
+			</tr>
+			
+		</form>
+	</table>
+	<a 
+	href="validar.php">Ingresar</a> 
+</body>
+</html>
+<?php
+
+
+#########################################################	
+#	
+#########################################################
+if (isset($_POST['usuario']) && isset($_POST['contraseña']) ){
+	$usuario = $_POST['usuario'];
+	$contraseña = $_POST['contraseña'];
+	$adm = "admin";
+	$ctr = "12345";
+	if( $usuario == $adm and $contraseña == $ctr)
+	{
+		echo "<br> Contraseña Correcta";
+	}	
+	setcookie("usuario", $usuario, time() + 84600);
+	
+}
+?>
